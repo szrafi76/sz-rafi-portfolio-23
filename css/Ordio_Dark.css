@@ -112,6 +112,10 @@ body.dark .orido_tm_main_title h3 span:before{
 }
 body.dark .orido_tm_informations .right .filter ul li a{
 	color: #fff;
+	transition: 0.5s ease all;
+}
+body.dark .orido_tm_informations .right .filter ul li a:hover{
+	color: red;
 }
 body.dark .orido_tm_informations .right .filter ul li a .svg path{
 	fill: #fff;
@@ -119,6 +123,7 @@ body.dark .orido_tm_informations .right .filter ul li a .svg path{
 body.dark .orido_tm_informations .right .filter .ccc{
 	border-color: #fff;
 }
+
 body.dark .orido_tm_informations .skillbox .icon{
 	background-color: #fff;
 }

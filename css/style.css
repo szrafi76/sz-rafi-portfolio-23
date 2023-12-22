@@ -3956,71 +3956,9 @@ input[type=number] {
 }
 
 
-/* external CSS  */
-.orido_tm_main_title h3 span:before {
-    position: absolute;
-    content: "";
-    width: 80px;
-    height: 1px;
-    background-color: var(--main-color);
-    bottom: 16px;
-    margin-left: 15px;
-    left: 100%;
+.expertise_title{
+    transition: 0.5s all;
 }
-
-.orido_tm_about .orido_tm_main_title h3 span:before {
-    background-color: #fff;
-}
-
-.orido_tm_about .orido_tm_boxed_button {
-    width: auto;
-}
-
-.orido_tm_about .orido_tm_boxed_button a {
-    color: var(--main-color);
-    background-color: #fff;
-}
-
-.orido_tm_about .orido_tm_boxed_button a:hover {
-    color: #fff;
-    background-color: var(--main-color);
-}
-
-.orido_tm_about .orido_tm_boxed_button a:hover .svg path {
-    fill: #fff;
-}
-
-.orido_tm_informations .right .filter .ccc {
-    top: -16px;
-    bottom: -20px;
-    border: 1px solid var(--main-color);
-    position: absolute;
-    z-index: -1;
-    border-radius: 16px;
-
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-}
-
-.orido_tm_informations .right .filter ul li a:hover:after {
-    opacity: 1;
-    visibility: visible;
-}
-
-.orido_tm_informations .right .filter ul li a.current:before {
-    opacity: 1;
-    visibility: visible;
-}
-
-.orido_tm_informations .right .content .wrapper {
-    display: none;
-}
-
-.orido_tm_informations .right .content .wrapper.current {
-    display: block;
-    -webkit-animation: slide-down 1s ease;
-    -moz-animation: slide-down 1s ease;
+.expertise_title:hover{
+    color: red;
 }
