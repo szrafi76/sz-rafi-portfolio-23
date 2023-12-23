@@ -696,22 +696,42 @@ h6 {
     box-shadow: 24px 0 72px rgba(54, 32, 152, .3)
 }
 
-.sz_rafi_tm_hero .skills.illustrator {
-    background-color: #390000;
-    top: 20px;
-    left: -30px
+.sz_rafi_tm_hero .skills.filmora {
+    box-shadow: none;
+     bottom: 60px;
+    left: 50px
 }
 
-.sz_rafi_tm_hero .skills.photoshop {
-    background-color: #001631;
+.sz_rafi_tm_hero .skills.filmora .svg {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.sz_rafi_tm_hero .skills.illustrator {
+    background-color: #390000;
     right: 70px;
     top: 80px
 }
 
+.sz_rafi_tm_hero .skills.photoshop {
+    background-color: #001631;
+    right: 50px!important;
+    bottom: 50px;
+}
+
 .sz_rafi_tm_hero .skills.figma {
     background-color: #fff;
-    bottom: 60px;
-    left: 140px
+    top: 20px;
+    left: -30px
+    /* bottom: 60px;
+    left: 140px */
+}
+
+.sz_rafi_tm_hero .skills.figma .svg {
+    fill: black;
+    height: 50px;
 }
 
 .sz_rafi_tm_hero .skills .svg {
@@ -2211,6 +2231,7 @@ h6 {
     border-radius: 10px;
     border: 2px solid #eee
 }
+
 .sz_rafi_tm_partners .partner_slider {
     width: 100%;
     float: left;
@@ -2220,7 +2241,8 @@ h6 {
     padding: 20px;
     border: 2px solid #eee
 }
-.sz_rafi_tm_partners .partner_slider .list_inner{
+
+.sz_rafi_tm_partners .partner_slider .list_inner {
     border: 1px solid #eee;
     padding: 10px;
     margin: 10px
@@ -2262,6 +2284,7 @@ h6 {
     -o-transition: all .3s ease;
     transition: all .3s ease
 }
+
 .sz_rafi_tm_partners ul li .list_inner {
     width: 100%;
     height: auto;
@@ -2275,10 +2298,10 @@ h6 {
     transition: all .3s ease
 }
 
-.sz_rafi_tm_partners ul li .list_inner:hover
-.sz_rafi_tm_partners .partner_slider .list_inner:hover {
-    opacity: 1!important
+.sz_rafi_tm_partners ul li .list_inner:hover .sz_rafi_tm_partners .partner_slider .list_inner:hover {
+    opacity: 1 !important
 }
+
 /* .sz_rafi_tm_partners .partners_inner .list_inner {
     width: 100%;
     height: auto;
@@ -3250,16 +3273,16 @@ input[type=number] {
 
     .sz_rafi_tm_hero .skills.figma {
         bottom: 20px;
-        left: 100px
+        /* left: 100px */
     }
 
     .sz_rafi_tm_hero .skills.photoshop {
         right: 110px
     }
 
-    .sz_rafi_tm_hero .skills.illustrator {
+    /* .sz_rafi_tm_hero .skills.illustrator {
         left: -20px
-    }
+    } */
 
     .sz_rafi_tm_process .icon .brush {
         max-width: 90px
@@ -3984,21 +4007,22 @@ input[type=number] {
 }
 
 
-.expertise_title{
+.expertise_title {
     transition: 0.5s all;
 }
-.expertise_title:hover{
+
+.expertise_title:hover {
     color: #FF5416;
 }
 
-.expertise_title.current{
+.expertise_title.current {
     color: #FF5416;
     border-bottom: 1px solid #FF5416;
     -webkit-transition: all .5s ease;
-	   -moz-transition: all .5s ease;
-	    -ms-transition: all .5s ease;
-	     -o-transition: all .5s ease;
-	        transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
 }
 
 
@@ -4008,30 +4032,31 @@ input[type=number] {
     height: 254px;
     perspective: 1000px;
     font-family: sans-serif;
-  }
-  
-  .title {
+}
+
+.title {
     font-size: 1.5em;
     font-weight: 900;
     text-align: center;
     margin: 0;
-  }
-  
-  .flip-card-inner {
+}
+
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
-  
-  .flip-card:hover .flip-card-inner {
+}
+
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -4042,19 +4067,19 @@ input[type=number] {
     backface-visibility: hidden;
     border: 1px solid #FF5416;
     border-radius: 1rem;
-  }
-  
-  .flip-card-front {
+}
+
+.flip-card-front {
     background: linear-gradient(120deg, #43464eba 60%, #2b2d33 88%,
-    #2b2d33 40%, rgba(255, 127, 80, 0.603) 48%);
+            #2b2d33 40%, rgba(255, 127, 80, 0.603) 48%);
     color: #FF5416;
     padding: 20px;
 
-  }
-  
-  .flip-card-back {
+}
+
+.flip-card-back {
     background: linear-gradient(120deg, rgb(255, 174, 145) 30%, #FF5416 88%,
-       bisque 40%, rgb(255, 185, 160) 78%);
+            bisque 40%, rgb(255, 185, 160) 78%);
     color: white;
     transform: rotateY(180deg);
-  }
+}
