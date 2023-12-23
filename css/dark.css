@@ -150,11 +150,11 @@ body.dark .sz_rafi_tm_header .menu ul li a {
 }
 
 body.dark .sz_rafi_tm_header .menu ul li.current a {
-    color: #02756e
+    color: #FF5416
 }
 
 body.dark .sz_rafi_tm_header .menu ul li a:hover {
-    color: #02756e
+    color: #FF5416
 }
 
 body.dark .sz_rafi_tm_hero .job p {
@@ -187,11 +187,11 @@ body.dark .sz_rafi_tm_portfolio .portfolio_filter ul li a {
 }
 
 body.dark .sz_rafi_tm_portfolio .portfolio_filter ul li a.current {
-    color: #02756e
+    color: #FF5416
 }
 
 body.dark .sz_rafi_tm_portfolio .portfolio_filter ul li a:hover {
-    color: #02756e
+    color: #FF5416
 }
 
 body.dark .progress_inner span.label {
@@ -215,14 +215,20 @@ body.dark .sz_rafi_tm_partners .partners_inner {
     border-color: #555
 }
 
+body.dark .sz_rafi_tm_partners .partner_slider {
+    border-color: #555
+}
+
 body.dark .sz_rafi_tm_news ul li .details .title a {
     color: #fff
 }
 
 body.dark .sz_rafi_tm_news ul li .details .title a:hover {
-    color: #02756e
+    color: #FF5416
 }
-
+.year{
+    color: #FF5416
+}
 body.dark .sz_rafi_tm_contact input {
     color: #b9b5c9;
     border: 1px solid rgba(214, 219, 229, .36)
@@ -242,7 +248,7 @@ body.dark .sz_rafi_tm_copyright .left a {
 }
 
 body.dark .sz_rafi_tm_copyright .left a:hover {
-    color: #02756e
+    color: #FF5416
 }
 
 body.dark .sz_rafi_tm_copyright .right ul li a {
@@ -250,7 +256,7 @@ body.dark .sz_rafi_tm_copyright .right ul li a {
 }
 
 body.dark .sz_rafi_tm_copyright .right ul li a:hover {
-    color: #02756e
+    color: #FF5416
 }
 
 body.dark .progressbar {

@@ -365,11 +365,10 @@ body::-webkit-scrollbar {
 .orido_tm_informations .right .filter .ccc{
 	top: -16px;
 	bottom: -20px;
-	border: 1px solid var(--main-color);
+    color: #FF5416;
+	/* border-bottom: 1px solid #FF5416; */
 	position: absolute;
-	z-index: -1;
-	border-radius: 16px;
-	
+	z-index: -1;	
 	-webkit-transition: all .5s ease;
 	   -moz-transition: all .5s ease;
 	    -ms-transition: all .5s ease;
