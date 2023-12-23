@@ -8,7 +8,7 @@ jQuery(document).ready(function () {
             'Frontend Developer'
         ],
         
-        typeSpeed: 70, // Decreased type speed for smoother typing
+        typeSpeed: 70,
         startDelay: 0,
         backSpeed: 40,
         smartBackspace: true,
@@ -17,8 +17,8 @@ jQuery(document).ready(function () {
         fadeOut: false,
         fadeOutClass: 'typed-fade-out',
         fadeOutDelay: 500,
-        loop: true, // Set loop to true for infinite typing
-        loopCount: Infinity, // Infinite loop
+        loop: true,
+        loopCount: Infinity, 
         showCursor: true,
         cursorChar: '|',
         autoInsertCss: true,
