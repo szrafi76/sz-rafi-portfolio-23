@@ -30,16 +30,16 @@ jQuery(document).ready(function () {
     $('.partner_slider').slick({
         infinite: true,
         speed: 7000,
-        slidesToShow: 4,
-        slidesToScroll: 4, 
-        autoplay: true,
+        slidesToShow: 8,
+        slidesToScroll: 8, 
+        // autoplay: true,
         autoplaySpeed: 0,
         cssEase: 'linear',
         responsive: [
             {
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 4
+                    slidesToShow: 8
                 }
             },
             {
