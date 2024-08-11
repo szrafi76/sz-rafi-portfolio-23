@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Content;
 use App\Models\Faq;
 use App\Models\Hero;
-use App\Models\Product;
+use App\Models\Project;
 use App\Models\SubCategory;
 
 class PublicController extends Controller
@@ -19,10 +19,10 @@ class PublicController extends Controller
 
         $categories = Category::where('status', '1')->orderBy('order', 'ASC')->get();
         $heros = Hero::where('status', '1')->orderBy('order', 'ASC')->get();
-        $products = Product::where('status', '1')->orderBy('order', 'ASC')->get();
+        // $products = Product::where('status', '1')->orderBy('order', 'ASC')->get();
         $faqs = Faq::where('status', '1')->orderBy('order', 'ASC')->get();
 
-        return view('web.pages.index', compact('blogs', 'heros', 'products', 'faqs', 'categories'));
+        return view('web.pages.index', compact('blogs', 'heros', 'faqs', 'categories'));
     }
 
 
@@ -69,8 +69,6 @@ class PublicController extends Controller
     }
 
 
-
-
     public function category($id)
     {
         $category = Category::find($id);
@@ -82,15 +80,15 @@ class PublicController extends Controller
     public function products()
     {
         $categories = Category::orderBy('order', 'ASC')->where('status', '1')->get();
-        $products = Product::where('status', '1')->orderBy('order', 'ASC')->get();
+        $products = Project::where('status', '1')->orderBy('order', 'ASC')->get();
         // dd($products);
         return view('web.pages.product.index', compact('products', 'categories'));
     }
     public function productdetails($id)
     {
 
-        $product = Product::find($id);
-        $products = Product::where('status', '1')->orderBy('order', 'ASC')->get();
+        $product = Project::find($id);
+        $products = Project::where('status', '1')->orderBy('order', 'ASC')->get();
 
         // dd($products);
         return view('web.pages.product.details', compact('products', 'product'));

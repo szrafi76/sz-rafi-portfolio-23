@@ -89,8 +89,8 @@
             <span key="t-product">product</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{ route('products.index') }}" key="t-list">All product</a></li>
-            <li><a href="{{ route('products.create') }}" key="t-create">Create product</a></li>
+            <li><a href="{{ route('project.index') }}" key="t-list">All product</a></li>
+            <li><a href="{{ route('project.create') }}" key="t-create">Create product</a></li>
 
         </ul>
     </li>

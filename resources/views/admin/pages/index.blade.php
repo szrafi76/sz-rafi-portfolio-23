@@ -27,7 +27,5 @@
     </div>
     <!-- End Page-content -->
 
-
-
 </div>
 @endsection

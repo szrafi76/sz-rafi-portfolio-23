@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
 Route::get('/Category/{id}', [PublicController::class, 'category'])->name('category.details');
-Route::get('/Product', [PublicController::class, 'products'])->name('product.index');
-Route::get('/Product/{id}', [PublicController::class, 'productdetails'])->name('product.details');
+Route::get('/product', [PublicController::class, 'products'])->name('product.index');
+Route::get('/product/{id}', [PublicController::class, 'productdetails'])->name('product.details');
 Route::get('/blogs', [PublicController::class, 'blogs'])->name('blogs.all');
 
 Route::get('/blog/{blog}', [PublicController::class, 'blogDetails'])->name('blog.details');
