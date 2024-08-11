@@ -2,6 +2,8 @@
 <div class="sz_rafi_tm_section" id="home">
     <div class="sz_rafi_tm_hero">
         <div class="background" data-img-url="{{ asset('') }}assets/web/img/slider/2.jpg"></div>
+     
+        @foreach ($heros as $hero)
         <div class="container">
             <div class="content">
                 <div class="details news_media_title">
@@ -9,15 +11,14 @@
                         <h3 class="orangeText">Hello, I'm</h3>
                     </div>
                     <div class="name">
-                        <h3>SZ Rafi</h3>
+                        <h3>{{ $hero->author ?? 'SZ Rafi'}}</h3>
                     </div>
                     <div class="job">
                         <p>A <span class="greenText"></span>  From <span
                                 class="yellowText">Bangladesh</span></p>
                     </div>
                     <div class="text">
-                        <p>I'm UI UX designer based in Bangladesh, and I'm very passionate and dedicated to my
-                            work.</p>
+                        <p>{{$hero->content ?? ''}}</p>
                     </div>
                     <div class="button">
                         <div class="sz_rafi_tm_button">
@@ -35,7 +36,8 @@
                 </div>
                 <div class="avatar">
                     <div class="image">
-                        <img src="{{ asset('') }}assets/web/img/slider/avatar.png" alt />
+                        <img src="{{ asset('uploads/heros/' . $hero->banner) }}" alt="{{ $hero->author ?? 'SZ Rafi'}}" />
+                        <!-- <img src="{{ asset('') }}assets/web/img/slider/avatar.png" alt /> -->
                         <span class="skills figma anim_moveBottom" title="Expert In UI/UX Design">
                             <img class="svg" src="{{ asset('') }}assets/web/img/svg/skills/figma.svg" alt />
                         </span>
@@ -54,6 +56,8 @@
                 </div>
             </div>
         </div>
+        @endforeach
+        <!-- scroll to bottom section  -->
         <div class="sz_rafi_tm_down">
             <a class="anchor" href="#about">
                 <svg width="26px" height="100%" viewBox="0 0 247 390" version="1.1"

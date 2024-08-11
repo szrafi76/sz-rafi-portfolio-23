@@ -50,8 +50,9 @@
                                             <th>status</th>
                                             <th>Order</th>
                                             <th>Title</th>
-                                            <th>Subtitle</th>
-                                            <th>Image</th>
+                                            <th>Author</th>
+                                            <th>Banner</th>
+                                            <!-- <th>Content</th> -->
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -68,16 +69,17 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $hero->order }}</td>
-                                                <td>{{ $hero->title }}</td>
+                                                <td>{{ $hero->title ?? ''}}</td>
+                                                <td>{{ $hero->author ?? '' }}</td>
                                                 <td>
-                                                    @if ($hero->image)
-                                                        <img src="{{ asset('uploads/heros/' . $hero->image) }}"
-                                                            alt="{{ $hero->title }}" width="80">
+                                                    @if ($hero->banner)
+                                                        <img src="{{ asset('uploads/heros/' . $hero->banner) }}"
+                                                            alt="{{ $hero->author ?? ''}}" width="80">
                                                     @else
                                                         No Image
                                                     @endif
                                                 </td>
-
+                                                <!-- <td class="word-break">{{ $hero->content ?? '' }}</td> -->
 
                                                 <td>
                                                     @if ($hero->status == 1)

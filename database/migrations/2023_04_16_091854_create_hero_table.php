@@ -15,11 +15,13 @@ class CreateHeroTable extends Migration
     {
         Schema::create('heros', function (Blueprint $table) {
             $table->id();
+            $table->string('author')->nullable();
             $table->string('title')->nullable();
-            $table->text('subtitle')->nullable();
-            $table->string('image');
-            $table->tinyInteger('order');
-            $table->tinyInteger('status')->default('1');
+            $table->text('content')->nullable();
+            $table->string('banner')->nullable();
+            $table->json('expertise_area')->nullable(); // JSON type for storing an array of strings
+            $table->tinyInteger('order')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
