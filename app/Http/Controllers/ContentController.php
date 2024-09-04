@@ -120,6 +120,16 @@ class ContentController extends Controller
 
             $content->about_image = $imageName;
         }
+        if ($request->hasFile('resume')) {
+            $resumeFile = $request->file('resume');
+            $resumeName = 'SZ_Rafi_Resume' . '.' . $resumeFile->getClientOriginalExtension();
+
+            // Save the file to the desired location
+            $resumeFile->move(base_path('/uploads/content/'), $resumeName);
+
+            // Store the file name in the database
+            $content->resume = $resumeName;
+        }
 
         $content->about_content = $validatedData['about_content'];
 

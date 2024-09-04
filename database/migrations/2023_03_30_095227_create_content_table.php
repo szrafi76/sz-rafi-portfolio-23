@@ -18,6 +18,7 @@ class CreateContentTable extends Migration
             $table->string('website_name');
             $table->text('website_slogan')->nullable();
             $table->string('website_logo');
+            $table->string('resume')->nullable();
             $table->string('website_favicon');
             $table->text('website_description');
             $table->string('office_address');

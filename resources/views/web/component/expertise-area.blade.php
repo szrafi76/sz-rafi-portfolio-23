@@ -17,10 +17,10 @@
                         <p>You can customize a template or make your own from scratch, with an immersive library
                             at your disposal.</p>
                     </div>
-                   
+
                     <div class="sz_rafi_tm_button resume_download">
                         <!-- <a class="anchor" href="#about"><span>About Me</span></a> -->
-                        <a class="anchor" href="resumes/shahanuzzaman_rafi.pdf" download> 
+                        <a class="anchor" target="_blank" href="{{ asset('uploads/content/' . $content->resume) }}">
                             <span>My Resume </span>
                             <span>
                                 <img class="svg" src="{{ asset('') }}assets/web/img/svg/download/download.svg" alt />
@@ -288,7 +288,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                
+
                                     <li class="mb-[37px] w-1/2 float-left pl-[20px] flip-card">
                                        <a href="">
                                         <div class="flip-card-inner">
@@ -302,8 +302,8 @@
                                         </div>
                                        </a>
                                     </li>
-                                
-                                  
+
+
                                 </ul>
                             </div>
                         </div>

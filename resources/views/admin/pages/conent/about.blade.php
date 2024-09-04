@@ -44,6 +44,13 @@
                                                 data-default-file="{{ asset('uploads/content/' . $content->about_image) }}">
                                         </div>
 
+                                        <div class="col-md-6">
+                                            <label for="image" class="form-label">Resume (PDF)</label>
+                                            <input type="file" class="form-control dropify" id="resume"
+                                                name="resume"
+                                                data-default-file="{{ asset('uploads/content/' . $content->resume) }}">
+                                        </div>
+
                                         <div class="col-md-12 mt-3">
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </div>

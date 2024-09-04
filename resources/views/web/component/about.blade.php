@@ -29,9 +29,9 @@
                     <div class="text wow fadeInUp" data-wow-duration="1s">
                         <p> {{ $content->about_content }}</p>
                     </div>
-                    <div class="sz_rafi_tm_button wow fadeInUp" data-wow-duration="1s">
+                    {{-- <div class="sz_rafi_tm_button wow fadeInUp" data-wow-duration="1s">
                         <a class="anchor" href="#contact"><span>Hire Me</span></a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

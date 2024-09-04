@@ -25,6 +25,7 @@ class Content extends Model
         'whatsapp_number',
         'youtube',
         'skype',
+        'resume'
 
     ];
 }
