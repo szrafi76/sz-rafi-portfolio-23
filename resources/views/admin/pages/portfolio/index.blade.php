@@ -41,7 +41,7 @@
                         <div class="card-body">
 
                             <a class="btn btn-soft-primary waves-effect waves-light mb-2"
-                              href="{{ route('products.create') }}">
+                              href="{{ route('portfolios.create') }}">
                                 + Create New Product </a>
 
                             <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
@@ -50,7 +50,6 @@
                                         <th>status</th>
                                         <th>Order</th>
                                         <th>Category</th>
-                                        <th>Sub Category</th>
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Image</th>
@@ -58,10 +57,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($products as $product)
+                                    @foreach ($portfolios as $portfolio)
+
                                     <tr>
                                         <td>
-                                            @if ($product->status == 1)
+                                            @if ($portfolio->status == 1)
                                             <span
                                               class="badge rounded-pill badge-soft-success font-size-11">Active</span>
                                             @else
@@ -69,16 +69,15 @@
                                               class="badge rounded-pill badge-soft-danger font-size-11">Inactive</span>
                                             @endif
                                         </td>
-                                        <td>{{ $product->order }}</td>
+                                        <td>{{ $portfolio->order }}</td>
 
-                                        <td>{{ $product->category?->title }}</td>
-                                        <td>{{ $product->subcategory?->title }}</td>
-                                        <td>{{ $product->title }}</td>
-                                        <td class="text-wrap">{!! $product->description !!}</td>
+                                        <td>{{ $portfolio->category->title ?? 'No Category' }}</td>
+                                        <td>{{ $portfolio->title }}</td>
+                                        <td class="text-wrap">{!! $portfolio->description !!}</td>
                                         <td>
-                                            @if ($product->image)
-                                            <img src="{{ asset('uploads/products/' . $product->image) }}"
-                                              alt="{{ $product->title }}" width="80">
+                                            @if ($portfolio->banner)
+                                            <img src="{{ asset('uploads/portfolios/' . $portfolio->banner) }}"
+                                              alt="{{ $portfolio->title }}" width="80">
                                             @else
                                             No Image
                                             @endif
@@ -86,25 +85,25 @@
 
 
                                         <td>
-                                            @if ($product->status == 1)
+                                            @if ($portfolio->status == 1)
                                             <a class="btn btn-danger waves-effect btn-circle waves-light"
-                                              href="{{ route('products.inactive', $product->id) }}">
+                                              href="{{ route('portfolios.inactive', $portfolio->id) }}">
                                                 <i class="fa fa-eye-slash"></i> </a>
                                             @else
                                             <a class="btn btn-success waves-effect btn-circle waves-light"
-                                              href="{{ route('products.active', $product->id) }}">
+                                              href="{{ route('portfolios.active', $portfolio->id) }}">
                                                 <i class="fa fa-eye"></i> </a>
                                             @endif
 
                                             <a class="btn btn-primary waves-effect btn-circle waves-light"
-                                              href="{{ route('products.edit', $product->id) }}">
+                                              href="{{ route('portfolios.edit', $portfolio->id) }}">
                                                 <i class="fa fa-edit"></i> </a>
-                                            <form hidden action="{{ route('products.destroy', $product->id) }}"
-                                              id="form{{ $product->id }}" method="get">
+                                            <form hidden action="{{ route('portfolios.destroy', $portfolio->id) }}"
+                                              id="form{{ $portfolio->id }}" method="get">
                                                 @csrf
                                             </form>
                                             <button class="btn btn-danger waves-effect btn-circle waves-light"
-                                              onclick="deleteItem({{ $product->id }});" type="button">
+                                              onclick="deleteItem({{ $portfolio->id }});" type="button">
                                                 <i class="fa fa-trash"></i> </button>
                                         </td>
                                         {{-- <td>

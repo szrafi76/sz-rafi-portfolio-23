@@ -123,7 +123,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         // delete the category's image file, if it exists
-
         if ($category->image && file_exists(asset('uploads/categories/' . $category->image))) {
             unlink(asset('uploads/categories/' . $category->image));
         }

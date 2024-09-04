@@ -68,7 +68,7 @@
 
 
         {{-- subcategory --}}
-        <li>
+        {{-- <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
                 <span key="t-subcategory">SubCategory</span>
@@ -78,7 +78,7 @@
                 <li><a href="{{ route('subcategories.create') }}" key="t-create">Create SubCategory</a></li>
 
             </ul>
-        </li>
+        </li> --}}
         {{-- End - subcategory --}}
 
 
@@ -86,11 +86,11 @@
     <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bx-home-circle"></i>
-            <span key="t-product">product</span>
+            <span key="t-product">Portfolio</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{ route('project.index') }}" key="t-list">All product</a></li>
-            <li><a href="{{ route('project.create') }}" key="t-create">Create product</a></li>
+            <li><a href="{{ route('portfolios.index') }}" key="t-list">All product</a></li>
+            <li><a href="{{ route('portfolios.create') }}" key="t-create">Create product</a></li>
 
         </ul>
     </li>

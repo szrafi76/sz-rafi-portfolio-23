@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             ContentSeeder::class,
             BlogSeeder::class,
             CategorySeeder::class,
-            ProjectSeeder::class,
+            PortfolioSeeder::class,
             HeroSeeder::class,
             FaqSeeder::class,
         ]);

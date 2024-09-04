@@ -6,7 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HeroController;
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Auth;
@@ -100,17 +100,17 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/inactive/{subcategory}', [SubCategoryController::class, 'inactive'])->name('subcategories.inactive');
     });
 
-    Route::prefix('projects')->group(function () {
+    Route::prefix('portfolios')->group(function () {
         // product-Routes
-        Route::get('/', [ProjectController::class, 'index'])->name('project.index');
-        Route::get('/create', [ProjectController::class, 'create'])->name('project.create');
-        Route::post('/', [ProjectController::class, 'store'])->name('project.store');
-        Route::get('/{project}', [ProjectController::class, 'show'])->name('project.show');
-        Route::get('/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
-        Route::put('/{project}', [ProjectController::class, 'update'])->name('project.update');
-        Route::get('/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
-        Route::get('/active/{project}', [ProjectController::class, 'active'])->name('project.active');
-        Route::get('/inactive/{project}', [ProjectController::class, 'inactive'])->name('project.inactive');
+        Route::get('/', [PortfolioController::class, 'index'])->name('portfolios.index');
+        Route::get('/create', [PortfolioController::class, 'create'])->name('portfolios.create');
+        Route::post('/', [PortfolioController::class, 'store'])->name('portfolios.store');
+        Route::get('/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
+        Route::get('/{portfolio}/edit', [PortfolioController::class, 'edit'])->name('portfolios.edit');
+        Route::put('/{portfolio}', [PortfolioController::class, 'update'])->name('portfolios.update');
+        Route::get('/{portfolio}', [PortfolioController::class, 'destroy'])->name('portfolios.destroy');
+        Route::get('/active/{portfolio}', [PortfolioController::class, 'active'])->name('portfolios.active');
+        Route::get('/inactive/{portfolio}', [PortfolioController::class, 'inactive'])->name('portfolios.inactive');
     });
 
 
