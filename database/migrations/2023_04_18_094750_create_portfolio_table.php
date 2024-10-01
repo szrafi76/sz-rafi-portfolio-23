@@ -23,6 +23,8 @@ class CreatePortfolioTable extends Migration
             $table->string('category_id');
             $table->json('gallery')->nullable();
             $table->date('completion_date');
+            $table->string('figma_link')->nullable();
+            $table->string('live_link')->nullable();
             $table->tinyInteger('order');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

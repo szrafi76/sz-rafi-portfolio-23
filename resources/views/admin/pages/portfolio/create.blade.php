@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Create Product</h4>
+                        <h4 class="mb-sm-0 font-size-18">Create Portfolio</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Products</a></li>
-                                <li class="breadcrumb-item active">Create Product</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Portfolios</a></li>
+                                <li class="breadcrumb-item active">Create Portfolio</li>
                             </ol>
                         </div>
 
@@ -40,8 +40,8 @@
                                         <input type="text" placeholder="Type portfolio sub title" class="form-control" id="subTitle" name="subTitle">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="category" class="form-label">Product Category :</label>
-                                        <select id="category_id" name="category_id" onchange="getcat(this.value)" class="form-select">
+                                        <label for="category" class="form-label">Portfolio Category :</label>
+                                        <select id="category_id" name="category_id" class="form-select">
 
                                             <option selected="">Choose...</option>
                                             @foreach ($Categories as $data)
@@ -56,21 +56,31 @@
                                         <input type="text" placeholder="Type client or company name..." class="form-control" id="client" name="client">
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <label for="title" class="form-label">Completion Date</label>
                                         <input type="date" class="form-control" id="completion_date" name="completion_date" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="title" class="form-label">Figma Link (Optional)</label>
+                                        <input type="text" class="form-control" id="figma_link" name="figma_link">
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="title" class="form-label">Website Link (Optional)</label>
+                                        <input type="text" class="form-control" id="live_link" name="live_link">
                                     </div>
 
                                     <div class="col-md-6">
                                         <label for="image" class="form-label">Banner</label>
                                         <input type="file" class="form-control dropify" id="banner" name="banner"
-                                          data-default-file="{{ old('banner') }}" required>
+                                          data-default-file="{{ old('banner') }}" data-allowed-file-extensions="jpg jpeg png gif svg" data-max-file-size="2M" required>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label for="image" class="form-label">Portfolio Gallery</label>
                                         <input type="file" class="form-control dropify" id="gallery" name="gallery[]"
-                                          data-default-file="{{ old('gallery[]') }}" required multiple>
+                                          data-default-file="{{ old('gallery[]') }}" data-allowed-file-extensions="jpg jpeg png gif svg" data-max-file-size="12M" multiple>
                                     </div>
 
                                     <div class="col-md-12">

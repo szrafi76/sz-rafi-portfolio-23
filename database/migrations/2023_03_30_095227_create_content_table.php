@@ -28,10 +28,13 @@ class CreateContentTable extends Migration
             $table->string('website_phone');
             $table->string('whatsapp_number')->nullable();
             $table->string('facebook_page')->nullable();
+            $table->string('behance')->nullable();
             $table->string('instagram_page')->nullable();
             $table->string('linkedin_page')->nullable();
             $table->string('skype')->nullable();
             $table->string('youtube')->nullable();
+            $table->string('experience_year')->nullable();
+            $table->string('total_project')->nullable();
             $table->timestamps();
         });
     }

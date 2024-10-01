@@ -23,12 +23,14 @@ class ContentSeeder extends Seeder
             'website_email' => 'szrafi76@gmail.com', // Updated email
             'website_phone' => '+880 171 573 3452',
             'whatsapp_number' => '',
-
+            'behance' => 'https://www.facebook.com',
             'facebook_page' => 'https://www.facebook.com',
             'instagram_page' => 'https://www.instagram.com',
             'office_address' => 'Dhaka, Bangladesh',
             'about_content' => 'Hello there! I\'m a UI/UX designer, and I\'m very passionate and dedicated to my work. With 2 years of experience as a professional UI/UX designer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion to collaboration.',
-            'about_image' => 'about.jpg', // Updated about image file name
+            'about_image' => 'about.jpg',
+            'experience_year'=> '2',
+            'total_project'=> '20',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

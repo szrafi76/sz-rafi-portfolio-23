@@ -46,50 +46,56 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         // Validate the request data
-        $data = $request->validate([
-            'title' => 'required',
-            'subTitle' => 'required',
-            'client' => 'required',
-            'description' => 'required',
-            'category_id' => 'required|integer',
+        $validatedData = $request->validate([
+            'title' => 'required|string',
+            'subTitle' => 'required|string',
+            'client' => 'required|string',
+            'description' => 'required|string',
+            'category_id' => 'required|string',
             'completion_date' => 'required|date',
             'banner' => 'required|image|max:2048', // Max file size of 2MB
-            'gallery.*' => 'image|max:2048' // Multiple images with max file size of 2MB each
+            'gallery' => 'nullable|array',
+            'gallery.*' => 'image|max:2048', // Each gallery image max 2MB
+            'figma_link' => 'nullable|url',
+            'live_link' => 'nullable|url',
         ]);
-        // Process the banner image
-        $banner = $request->file('banner');
-        $bannerName = time() . '.' . $banner->extension();
-        $banner->move(public_path('uploads/portfolios'), $bannerName);
+
+         // Handle banner image
+        $bannerImage = $request->file('banner');
+        $bannerName = time() . '_banner.' . $bannerImage->extension();
+        $img = Image::make($bannerImage->path());
+        $img->fit(1200, 800); // Adjust size as needed
+        $img->encode('jpg', 80);
+        $img->save(public_path('uploads/portfolio/') . $bannerName);
         $data['banner'] = $bannerName;
 
-        // Process gallery images
+        dd($data);
+     // Handle gallery images
         $galleryImages = [];
         if ($request->hasFile('gallery')) {
             foreach ($request->file('gallery') as $image) {
-                $imageName = time() . '-' . uniqid() . '.' . $image->extension();
-                $image->move(public_path('uploads/portfolios'), $imageName);
+                $imageName = time() . '_' . uniqid() . '.' . $image->extension();
+                $img = Image::make($image->path());
+                $img->fit(800, 600); // Adjust size as needed
+                $img->encode('jpg', 80);
+                $img->save(public_path('uploads/portfolio/gallery/') . $imageName);
                 $galleryImages[] = $imageName;
             }
-            $data['gallery'] = json_encode($galleryImages);
-        } else {
-            $data['gallery'] = json_encode([]);
         }
-
-        // Handle 'order' field
-        $lastProduct = Portfolio::orderByDesc('order')->first();
-        $data['order'] = $lastProduct ? $lastProduct->order + 1 : 1;
-
-        // Create the project
-        $product = Portfolio::create($data);
-
-        // Redirect based on success or failure
-        if ($product) {
-            return redirect()->route('portfolios.index')->with('success', 'Portfolio created successfully.');
+        $data['gallery'] = json_encode($galleryImages);
+    
+        // Set order
+        $lastPortfolioItem = Portfolio::orderByDesc('order')->first();
+        $data['order'] = $lastPortfolioItem ? $lastPortfolioItem->order + 1 : 1;
+    
+        $portfolioItem = Portfolio::create($data);
+    
+        if ($portfolioItem) {
+            return redirect()->route('portfolios.index')->with('success', 'Portfolio item created successfully.');
         } else {
-            return back()->with('error', 'Error creating portfolio.');
+            return back()->with('error', 'Error creating portfolio item.');
         }
     }
-
 
     /**
      * Display the specified resource.
